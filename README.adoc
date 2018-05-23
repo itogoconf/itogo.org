@@ -1,0 +1,135 @@
+image::src/images/logo/logo-500.png[MixTeen]
+
+== Le site web la conférence ITogo
+
+Ce projet permet de gérer le site web de la conférence ITogo. Commme nous allons le voir plus bas le site est généré statiquement et tout est génére à l'installation. Installation en local pour développer ou ajouter du contenu, mais aussi lorsque le site est installé sur le serveur de production. Le but est vraiment de pouvoir bénéficier des mêmes outils quelque soit l'environnement.
+
+== D'un point de vue technique
+
+=== Compatibilité navigateur
+
+Le site n'est compatible que sur les navigateurs dits "modernes" (pouvant exécuter du JavaScript ES > 6). Vous pouvez donc utiliser les navigateurs suivant
+
+* Chrome
+* Edge
+* Firefox
+* Safari
+* Edge voir Internet Explorer >= 11
+
+=== Configurer ton poste de développement
+
+Ce projet est Open Source et toutes les personnes motivées sont les bienvenues pour nous aider à faire évoluer notre site web.
+
+D'un point de vue technique tu as besoin pour lancer le site en local
+
+* D'une version de https://nodejs.org/en/[Node JS] > 7.0 (idéalement > 9). Tu peux aller sur le site pour installer Node sur ta machine. Le site ne fonctionne pas directement avec Node mais nous utilisons l'écosystème JavaScript pour le générer.
+* Lors de l'installation nous allons télécharger des dépendances Node et pour celà nous utilisons le gestionnaire de paquets https://yarnpkg.com/en/[Yarn]. Si `yarn` n'est pas installé tu peux lancer dans un terminal la commande `npm install -g yarn` (npm est automatiquement installé en même temps que Node)
+* Le cycle de vie de l'application est lui géré par l'application http://gulpjs.com/[Gulp]. Si `gulp` n'est pas installé tu peux lancer dans un terminal la commande `npm install -g gulp`
+
+=== Installer le site en local
+
+Une fois que tous les outils décrits dans la partie précédente sont installés tu peux lancer les commandes suivantes
+
+*Initialiser le projet* et charger les librairies utilisées pour le développement
+
+[source, shell, subs="none"]
+----
+yarn install
+----
+
+*Lancer le site en local*
+
+[source, shell, subs="none"]
+----
+gulp serve
+----
+
+Cette commande Gulp effectue différentes tâches que tu peux lancer individuellement si tu veux tester une phase particulière de la construction du projet
+
+* _initModeDev_ : initialise le mode développement afin de ne pas pourir en dev la base Firebase de production
+* _images-pre_ : lance la pre optimisation des images pour les compresser au mieux pour le web
+* _styles_ : compile les fichiers Sass en CSS
+* _images_ : génère les images au format webp qui est un format optimisé pour Chrome
+* _images-post_ : copie les images dans le répertoire de sortie
+* _lint_ : analyse le code pour détecter les problèmes
+* _html_ : génère les pages HTML à partir des sources. Chaque page HTML est intégrée dans un template mustache pour éviter de toujours déclarer les mêmes entêtes dans tous nos fichiers
+* _local-js_ : crée un fichier bundle avec les différents scripts définis dans l'application
+* _vendor-js_ : copie les dépendances externes dans le répertoire de sortie
+* _copy_ : copie les fichiers statiques (manifest, robot.txt...) dans le répertoire de sortie
+* _cache-busting_ : ajoute un hash à chaque ressource pour limiter les problèmes de cache
+* _service-worker_ : génère des services workers pour être capable d'utiliser le site hors ligne
+* _serveAndWatch_ : démarre un serveur web pour les tests et active un mode watch pour que les ressources soient automatiquement mises à jour quand elles sont modifiées
+
+
+*Générer le site pour la production*
+
+[source, shell, subs="none"]
+----
+gulp
+----
+
+Cette commande Gulp effectue différentes tâches que tu peux lancer individuellement si tu veux tester une phase particulière de la construction du projet
+
+* _images-pre_ : lance la pre optimisation des images pour les compresser au mieux pour le web
+* _styles_ : compile les fichiers Sass en CSS
+* _images_ : génère les images au format webp qui est un format optimisé pour Chrome
+* _images-post_ : copie les images dans le répertoire de sortie
+* _lint_ : analyse le code pour détecter les problèmes
+* _html_ : génère les pages HTML à partir des sources. Chaque page HTML est intégrée dans un template mustache pour éviter de toujours déclarer les mêmes entêtes dans tous nos fichiers
+* _local-js_ : crée un fichier bundle avec les différents scripts définis dans l'application
+* _vendor-js_ : copie les dépendances externes dans le répertoire de sortie
+* _copy_ : copie les fichiers statiques (manifest, robot.txt...) dans le répertoire de sortie
+* _cache-busting_ : ajoute un hash à chaque ressource pour limiter les problèmes de cache
+* _service-worker_ : génère des services workers pour être capable d'utiliser le site hors ligne
+* _sitemap_ : génère le fichier sitemap.xml pour les robots indexeurs
+
+== Contribuer au site
+
+Je viens de parler de la partie technique mais pas besoin de maîtriser tout ça pour participer à ce projet.
+
+===  page HTML
+
+Pour ajouter une page statique au site c'est possible de le faire en ajoutant un fichier dans le répertoire HTML. Vous ne vous souciez que du contenu. Tout le reste est autmatiquement ajouté lors de la génération du site
+
+Par contre comme nous avons besoin de générer un titre, une description... A chaque fos que vous ajoutez une page dans ce répertoire vous devez mettre à jour le fichier `src/metadata/html.json`.
+
+Par exemple
+
+[source, asciidoctor, subs="none"]
+----
+{
+  "index.html" : {
+      "keywords": "ITogo conf est la conférence IT pour les développeurs organisée à Lomé au Togo le 9 juin 2018",
+      "title": "ITogo conf",
+      "description" : "ITogo conf est la conférence IT pour les développeurs organisée à Lomé au Togo le 9 juin 2018",
+      "priority": 0.8
+    }
+}
+----
+
+La clé est le nom du fichier html. On trouve les propriétés suivantes
+
+* _title_ => utiliser pour la balise `<title>` dans le head de la page HTML
+* _description_ => utiliser pour la balise `<meta name="description">` dans le head de la page HTML
+* _keywords_ => utiliser pour la balise `<meta name="keywords">` dans le head de la page HTML
+* _priority_ => utiliser dans le fichier sitemap.xml pour la pertinence
+
+Si cette page doit être ajoutée au menu, tu peux modifier le fichier `src/template/_page_header.mustache`.
+
+Si tu oublies de référencer la page dans le fichier metadata tu auras une erreur à l'installation du site
+
+===  template Mustache
+
+Mustache est utilisé pour éviter de faire de la duplication de code entre les pages. Normalement le seul template que l'on a vraiment besoind e changer est le template `index.mustache` qui contient le contenu de la home. C'est un template et pas une page HTML car on insère à l'intérieur les deux derniers articles de blog.
+
+Les sous templates sont
+
+* __html_footer.mustache_ : pied HTML (fichiers JavaScript)
+* __html_header.mustache_ : entête HTML (metadata, fichier CSS...)
+* __page_footer.mustache_ : pied de page (lien, copyright)
+* __page_header.mustache_ : menu
+
+Les autres templates sont
+
+* _site.mustache_ : la page site qui est utilisé pour générer les pages qui sont dans le répertoire HTML
+

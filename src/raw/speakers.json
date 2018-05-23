@@ -1,0 +1,55 @@
+[
+  {
+    "company": "Dev-Mind",
+    "description": "J'adore la création et n'étant pas un grand artiste je me suis tourné vers la programmation logicielle. J'adore créer des applications qui répondent aux besoins des utilisateurs J'ai eu plusieurs fois l'opportunité de changer les casquettes.... développeur, chef de projet, consultant, architecte.... Après avoir tester ces différents métiers de l'IT pendant plusieurs années, je suis revenu à mes premiers amours le développement. Je me définis aujourd'hui comme un développeur agile libre (Java, Web, Android...). Cette liberté me laisse aussi du temps pour aider les communautés en faisant partie des teams MiXiT pour l'organisation de la conférence MiXiT à Lyon et de Mixteen pour l'organisation d'ateliers pour les enfants et ados de la région lyonnaise.",
+    "firstname": "Guillaume",
+    "lastname": "EHRET",
+    "comeFrom": "FRANCE",
+    "links": [
+      {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/guillaumeehret"
+      },
+      {
+        "name": "Site",
+        "url": "https://dev-mind.fr"
+      }
+    ],
+    "login": "guillaumeehret",
+    "photoUrl": "https://www.gravatar.com/avatar/aa4d47d1016e45c23b6af05ec11c0a9c?s=400&?s=400"
+  },
+  {
+    "company": "Synaltic Group",
+    "description": "Horacio est actuellement Data Engineer chez Synaltic Group un ESN spécialisé dans le Data Management. Dans une autre vie, Horacio a travaillé dans plusieurs sociétés en Afrique comme développeur et aussi Administrateur Système. Multi-récidive dans les actions communautaires en Afrique, il a participé à la création d'un Java User Group et l'animation des activités au Togo.",
+    "firstname": "Horacio",
+    "lastname": "LASSEY",
+    "comeFrom": "TOGO",
+    "links": [
+      {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/horalass"
+      },
+      {
+        "name": "Blog",
+        "url": "http://horalass.blogspot.fr/"
+      }
+    ],
+    "login": "horalass",
+    "photoUrl": "https://www.gravatar.com/avatar/e59ffca2a2dfe733562ccc207ddd1af1?s=400&?s=400"
+  },
+  {
+    "company": "",
+    "description": "",
+    "firstname": "Constantin",
+    "lastname": "DRABO",
+    "comeFrom": "BURKINA FASO",
+    "links": [
+      {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/PandaConstantin"
+      }
+    ],
+    "login": "pandaConstantin",
+    "photoUrl": "https://pbs.twimg.com/profile_images/753034955274485761/S4TLTuoH_400x400.jpg"
+  }
+]

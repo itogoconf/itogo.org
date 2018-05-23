@@ -1,0 +1,20 @@
+{
+  "index.html" : {
+    "keywords": "ITogo conf est la conférence IT pour les développeurs organisée à Lomé au Togo le 9 juin 2018",
+    "title": "ITogo conf",
+    "description" : "ITogo conf est la conférence IT pour les développeurs organisée à Lomé au Togo le 9 juin 2018",
+    "priority": 0.8
+  },
+  "404.html" : {
+    "keywords": "ITogo conf est la conférence IT pour les développeurs organisée à Lomé au Togo le 9 juin 2018",
+    "title": "ITogo conf 404",
+    "description" : "Page non trouvée sur le serveur",
+    "priority": -1
+  },
+  "shell.html" : {
+    "keywords": "ITogo conf",
+    "title": "ITogo conf - app loading",
+    "description" : "ITogo conf est la conférence IT pour les développeurs à Lomé au Togo",
+    "priority": -1
+  }
+}
