@@ -52,4 +52,20 @@
     "login": "pandaConstantin",
     "photoUrl": "https://pbs.twimg.com/profile_images/753034955274485761/S4TLTuoH_400x400.jpg"
   }
+  
+  {
+    "company": "",
+    "description": "",
+    "firstname": "Josue",
+    "lastname": "TCHIRKTEMA",
+    "comeFrom": "TOGO",
+    "links": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/tchirktema"
+      }
+    ],
+    "login": "tchirktema",
+    "photoUrl": "https://pbs.twimg.com/profile_images/797568695002398720/RWDQ83DI_400x400.jpg"
+  }
 ]
