@@ -10,7 +10,7 @@
     "title": "50 minutes pour créer une application Android"
   },
   {
-    "description": "??????",
+    "description": "Durant cette présentation nous découvrirons les standards de Java à travers un parcours des objectifs et fonctionnement de la  JCP ( Java Community Process). Nous allons consacrer quelques minutes pour procéder à la compilation et génération de l’exécutable du JDK ( kit de développement de Java) à partir de la source",
     "start": "2018-06-09T10:00:00",
     "end": "2018-06-09T10:50:00",
     "event": "itogo2018",
