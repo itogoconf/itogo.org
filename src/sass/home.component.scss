@@ -45,7 +45,7 @@
 
 }
 
-.dm_home_blog {
+.dm_home_inverse {
   @include dm_home_row($color_secondary, $color_primary);
 
   @include dm_home_link(#474747);
