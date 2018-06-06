@@ -66,5 +66,20 @@
     ],
     "login": "tchirktema",
     "photoUrl": "https://pbs.twimg.com/profile_images/797568695002398720/RWDQ83DI_400x400.jpg"
+  },
+  {
+    "company": "",
+    "description": "Je suis Développeur et Administrateur Système, Réseau et sécurité. Je m'intéresse aux logiciels libres et open-source, l'internet, le mobile, les standards ouverts et le web sémantique.Cofondateur de l'association IGBANET qui a lancé : Cotonou Wireless, GDG Cotonou, BJNOG et bien d'autres projets",
+    "firstname": "Mathias",
+    "lastname": "HOUNGBO",
+    "comeFrom": "BENIN",
+    "links": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/mhoungbo"
+      }
+    ],
+    "login": "mhoungbo",
+    "photoUrl": "https://pbs.twimg.com/profile_images/940690390537199620/ATkX1Jsn_400x400.jpg"
   }
 ]
